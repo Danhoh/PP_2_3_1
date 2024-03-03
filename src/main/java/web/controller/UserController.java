@@ -34,7 +34,6 @@ public class UserController {
 
     @PostMapping("/add")
     public String post(
-            Model model,
             HttpServletRequest request
     ) {
         User user = new User(
@@ -44,7 +43,7 @@ public class UserController {
                 Date.valueOf(request.getParameter("age")).toLocalDate(),
                 Role.valueOf(request.getParameter("role"))
         );
-        if (request.getParameter("id") != null) {
+        if (!request.getParameter("id").isEmpty()) {
             user.setId(Long.parseLong(request.getParameter("id")));
         }
 
@@ -57,7 +56,6 @@ public class UserController {
     public String delete(
             @RequestParam long id
     ) {
-        System.out.println("removing user with id " + id);
         userService.removeById(id);
         return "redirect:/";
     }
