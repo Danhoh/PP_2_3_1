@@ -1,9 +1,7 @@
 package dao;
 
 import model.User;
-import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 public interface UserDao {
