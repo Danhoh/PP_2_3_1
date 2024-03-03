@@ -3,13 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <title>Index page</title>
+    <style>
+        td, th {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 2vw;
+        }
+
+        table {
+            margin: 0 auto;
+        }
+
+        .bordered {
+            border: 1px solid black;
+            margin: 2vh;
+        }
+
+        .form-row {
+            margin: 5px;
+            border: 1px solid grey;
+        }
+    </style>
 </head>
 <body>
-<h1>Index page</h1>
-<p>
-    Text in param:
-    <span th:text="${a}"></span>
-</p>
 
+<h1>Index page</h1>
+
+<div id="users-list" class="bordered">
+    <table>
+        <thead>
+        <tr>
+            <th>User id</th>
+            <th>username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Birthday</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user: ${users}">
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getFirstName()}"></td>
+            <td th:text="${user.getLastName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td th:text="${user.getRole()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="bordered">
+    <h2>Change / add user</h2>
+    <form action="/add" method="post">
+<!--        <div class="form-row">-->
+<!--            <label for="id">ID:</label>-->
+<!--            <input name="id" id="id" type="text">-->
+<!--        </div>-->
+        <div class="form-row">
+            <label for="username">username:</label>
+            <input name="username" id="username" type="text">
+        </div>
+        <div class="form-row">
+            <label for="firstName">firstName:</label>
+            <input name="firstName" id="firstName" type="text">
+        </div>
+        <div class="form-row">
+            <label for="lastName">lastName:</label>
+            <input name="lastName" id="lastName" type="text">
+        </div>
+        <div class="form-row">
+            <label for="age">Birthday:</label>
+            <input name="age" id="age" type="date">
+        </div>
+        <div class="form-row">
+            <label for="role">Role:</label>
+            <select name="role" id="role">
+                <option value="Programmer">Programmer</option>
+                <option value="Manager">Manager</option>
+                <option value="CEO">CEO</option>
+                <option value="Consultant">Consultant</option>
+            </select>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<div class="bordered">
+    <h2>Remove user by id</h2>
+    <form action="/delete" method="get">
+        <div class="form-row">
+            <label for="userId">User id:</label>
+            <input name="id" id="userId" type="text">
+        </div>
+        <button type="submit">Send</button>
+    </form>
+</div>
 </body>
 </html>

@@ -15,6 +15,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+
+
     @Column(unique = true, nullable = false)
     private String username;
     private String firstName;
@@ -22,6 +25,24 @@ public class User {
     private LocalDate age;
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    public User() {
+
+    }
+
+    public User(
+            String username,
+            String firstName,
+            String lastName,
+            LocalDate age,
+            Role role
+    ) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.role = role;
+    }
 
     public String getUsername() {
         return username;
@@ -63,15 +84,23 @@ public class User {
         this.role = role;
     }
 
-    public User() {
-
-    }
-
     public long getId() {
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+               "id=" + id +
+               ", username='" + username + '\'' +
+               ", firstName='" + firstName + '\'' +
+               ", lastName='" + lastName + '\'' +
+               ", age=" + age +
+               ", role=" + role +
+               '}';
     }
 }
