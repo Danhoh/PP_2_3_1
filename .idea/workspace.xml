@@ -9,17 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce61c67-482d-4b69-8d1d-9c8209585d07" name="Changes" comment="configured with hibernate">
+    <list default="true" id="bce61c67-482d-4b69-8d1d-9c8209585d07" name="Changes" comment="@Transactional not working, only manual transactions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/configuration/SpringConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/configuration/SpringConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +28,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -208,7 +205,8 @@
       <workItem from="1709319157657" duration="28000" />
       <workItem from="1709319232452" duration="8632000" />
       <workItem from="1709372795071" duration="18462000" />
-      <workItem from="1709465486315" duration="9054000" />
+      <workItem from="1709465486315" duration="12986000" />
+      <workItem from="1709481372589" duration="899000" />
     </task>
     <task id="LOCAL-00001" summary="configured with hibernate">
       <option name="closed" value="true" />
@@ -218,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709385893698</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="@Transactional not working, only manual transactions">
+      <option name="closed" value="true" />
+      <created>1709477566905</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709477566905</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +246,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="configured with hibernate" />
-    <option name="LAST_COMMIT_MESSAGE" value="configured with hibernate" />
+    <MESSAGE value="@Transactional not working, only manual transactions" />
+    <option name="LAST_COMMIT_MESSAGE" value="@Transactional not working, only manual transactions" />
   </component>
 </project>

@@ -3,19 +3,16 @@ package web.controller;
 import model.Role;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.UserService;
-import service.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
-import java.time.LocalTime;
 
 
 @Controller
@@ -23,7 +20,7 @@ public class UserController {
     private final UserService userService;
 
     @Autowired
-    public UserController(UserServiceImpl userService) {
+    public UserController(@Qualifier("userServiceImpl") UserService userService) {
         this.userService = userService;
     }
 
@@ -47,6 +44,9 @@ public class UserController {
                 Date.valueOf(request.getParameter("age")).toLocalDate(),
                 Role.valueOf(request.getParameter("role"))
         );
+        if (request.getParameter("id") != null) {
+            user.setId(Long.parseLong(request.getParameter("id")));
+        }
 
         userService.save(user);
         System.out.println(user);
@@ -57,6 +57,7 @@ public class UserController {
     public String delete(
             @RequestParam long id
     ) {
+        System.out.println("removing user with id " + id);
         userService.removeById(id);
         return "redirect:/";
     }
