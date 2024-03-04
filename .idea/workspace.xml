@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bce61c67-482d-4b69-8d1d-9c8209585d07" name="Changes" comment="guess im done...">
+    <list default="true" id="bce61c67-482d-4b69-8d1d-9c8209585d07" name="Changes" comment="little fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +203,10 @@
       <workItem from="1709319232452" duration="8632000" />
       <workItem from="1709372795071" duration="18462000" />
       <workItem from="1709465486315" duration="12986000" />
-      <workItem from="1709481372589" duration="1412000" />
+      <workItem from="1709481372589" duration="2817000" />
+      <workItem from="1709536394704" duration="2627000" />
+      <workItem from="1709549764799" duration="14000" />
+      <workItem from="1709555902905" duration="4606000" />
     </task>
     <task id="LOCAL-00001" summary="configured with hibernate">
       <option name="closed" value="true" />
@@ -235,7 +240,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709482573548</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1709482856262</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709482856262</updated>
+    </task>
+    <task id="LOCAL-00006" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1709536690347</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709536690347</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +280,7 @@
     <MESSAGE value="configured with hibernate" />
     <MESSAGE value="@Transactional not working, only manual transactions" />
     <MESSAGE value="guess im done..." />
-    <option name="LAST_COMMIT_MESSAGE" value="guess im done..." />
+    <MESSAGE value="little fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="little fix" />
   </component>
 </project>

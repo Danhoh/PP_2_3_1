@@ -7,12 +7,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import service.UserService;
-
-import javax.servlet.http.HttpServletRequest;
-import java.sql.Date;
 
 
 @Controller
@@ -29,26 +27,16 @@ public class UserController {
             Model model
     ) {
         model.addAttribute("users", userService.getAllUsers());
+        model.addAttribute("user", new User());
         return "index";
     }
 
     @PostMapping("/add")
     public String post(
-            HttpServletRequest request
+            @ModelAttribute("user") User user
     ) {
-        User user = new User(
-                request.getParameter("username"),
-                request.getParameter("firstName"),
-                request.getParameter("lastName"),
-                Date.valueOf(request.getParameter("age")).toLocalDate(),
-                Role.valueOf(request.getParameter("role"))
-        );
-        if (!request.getParameter("id").isEmpty()) {
-            user.setId(Long.parseLong(request.getParameter("id")));
-        }
-
-        userService.save(user);
         System.out.println(user);
+        userService.save(user);
 
         return "redirect:/";
     }
@@ -58,5 +46,10 @@ public class UserController {
     ) {
         userService.removeById(id);
         return "redirect:/";
+    }
+
+    @ModelAttribute("roles")
+    public Role[] getRoles() {
+        return Role.values();
     }
 }

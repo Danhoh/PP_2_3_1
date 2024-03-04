@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Index page</title>
@@ -37,7 +37,6 @@
             <th>username</th>
             <th>First name</th>
             <th>Last name</th>
-            <th>Birthday</th>
             <th>Role</th>
         </tr>
         </thead>
@@ -47,7 +46,6 @@
             <td th:text="${user.getUsername()}"></td>
             <td th:text="${user.getFirstName()}"></td>
             <td th:text="${user.getLastName()}"></td>
-            <td th:text="${user.getAge()}"></td>
             <td th:text="${user.getRole()}"></td>
         </tr>
         </tbody>
@@ -60,34 +58,27 @@
         If You`ll skip id field, then new user will be added to database,<br>
         else user with specified id will be changed (you need to fill all fields).
     </p>
-    <form action="/add" method="post">
+    <form th:action="@{/add}" th:method="post" th:object="${user}">
         <div class="form-row">
             <label for="id">ID:</label>
-            <input name="id" id="id" type="text">
+            <input name="id" id="id" type="text" th:field="*{id}">
         </div>
         <div class="form-row">
             <label for="username">username:</label>
-            <input name="username" id="username" type="text">
+            <input name="username" id="username" type="text" th:field="*{username}">
         </div>
         <div class="form-row">
             <label for="firstName">firstName:</label>
-            <input name="firstName" id="firstName" type="text">
+            <input name="firstName" id="firstName" type="text" th:field="*{firstName}">
         </div>
         <div class="form-row">
             <label for="lastName">lastName:</label>
-            <input name="lastName" id="lastName" type="text">
-        </div>
-        <div class="form-row">
-            <label for="age">Birthday:</label>
-            <input name="age" id="age" type="date">
+            <input name="lastName" id="lastName" type="text" th:field="*{lastName}">
         </div>
         <div class="form-row">
             <label for="role">Role:</label>
-            <select name="role" id="role">
-                <option value="Programmer">Programmer</option>
-                <option value="Manager">Manager</option>
-                <option value="CEO">CEO</option>
-                <option value="Consultant">Consultant</option>
+            <select name="role" id="role" th:field="*{role}">
+                <option th:each="role : ${roles}" th:value="${role}" th:text="${role}" ></option>
             </select>
         </div>
         <button type="submit">Send</button>
