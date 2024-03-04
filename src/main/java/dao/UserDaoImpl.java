@@ -1,13 +1,13 @@
 package dao;
 
 import model.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-@Component
+@Repository
 public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
@@ -24,5 +24,10 @@ public class UserDaoImpl implements UserDao {
     @Override
     public void removeById(long id) {
         entityManager.remove(entityManager.find(User.class, id));
+    }
+
+    @Override
+    public User findById(long id) {
+        return entityManager.find(User.class, id);
     }
 }

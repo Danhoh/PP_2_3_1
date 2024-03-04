@@ -10,4 +10,6 @@ public interface UserService {
     void save(User user);
 
     void removeById(long id);
+
+    User findById(long id);
 }

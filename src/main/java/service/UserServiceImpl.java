@@ -33,4 +33,9 @@ public class UserServiceImpl implements UserService{
     public void removeById(long id) {
         userDao.removeById(id);
     }
+
+    @Override
+    public User findById(long id) {
+        return userDao.findById(id);
+    }
 }

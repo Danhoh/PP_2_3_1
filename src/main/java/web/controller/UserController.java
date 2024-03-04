@@ -48,6 +48,15 @@ public class UserController {
         return "redirect:/";
     }
 
+    @GetMapping("/update")
+    public String update(
+            @RequestParam long id,
+            Model model
+    ) {
+        model.addAttribute("user", userService.findById(id));
+        return "update";
+    }
+
     @ModelAttribute("roles")
     public Role[] getRoles() {
         return Role.values();
