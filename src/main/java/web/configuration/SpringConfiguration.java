@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -30,17 +31,19 @@ import java.util.Properties;
 @EnableWebMvc
 @PropertySource("classpath:app.properties")
 @EnableTransactionManagement
+@EnableJpaRepositories("repository")
 @ComponentScan({"web", "dao", "service"})
 public class SpringConfiguration implements WebMvcConfigurer {
-    @Autowired
-    private Environment env;
+    private final Environment env;
     private final ApplicationContext applicationContext;
 
+    @Autowired
     public SpringConfiguration(
-            ApplicationContext applicationContext
+            ApplicationContext applicationContext,
+            Environment env
     ) {
         this.applicationContext = applicationContext;
-
+        this.env = env;
     }
 
     @Bean
